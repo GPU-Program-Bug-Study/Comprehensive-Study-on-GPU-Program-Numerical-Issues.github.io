@@ -14,22 +14,22 @@
              For example, the perspective transformation requires a 4X4 matrix–vector multiply and a perspective division operation. </p>
         
         <p style="color:black;font-size:20px;"> GeForce 6 had a peak performance of 108 billion single-precision floating-point operations per second (108 GFLOPS) [1]. 
-               However, programming these GPUs was challenging because the input and output were very restricted. <br>
+               However, programming these GPUs was challenging because the input and output were very restricted. 
                Fragment shaders only received input from interpolated vertex attributes and textures and only deposited output into the frame buffer. 
                Programmers had to cast their applications as rendering texture mapped and blended triangles to harness the FLOPS of these GPUs[1]. </p>
         
         <p style="color:black;font-size:20px;"> The stream processing model influenced the design of GPUs intended for computing [1]. 
-               The GeForce 8 GPU or G80 introduced streaming multiprocessors (SMs) that were used to run both vertex and fragment shaders.<br>
+               The GeForce 8 GPU or G80 introduced streaming multiprocessors (SMs) that were used to run both vertex and fragment shaders.
                These SMs could also run “compute shaders” independent of the graphics pipeline specifically in the form of CUDA cooperative thread arrays. 
-               A shared memory facilitated communication between the threads in an array. <br>
+               A shared memory facilitated communication between the threads in an array. 
                The G80 “Tesla” GPU and CUDA reduced the barriers to developing GPU-based scientific and other general-purpose applications[1]. 
                G80 was a massively parallel threaded processor, and CUDA was a thread- and data-parallel C-like programming language. </p>
         
         <p style="color:black;font-size:20px;"> The development of Fermi generation of GPUs helps to address the floating point issues in GPUs [1][2]. 
-         Single precision floating point instructions  support subnormal numbers by default in hardware. <br>
+         Single precision floating point instructions  support subnormal numbers by default in hardware. 
          Subnormal numbers are small numbers that lie between zero and the smallest normalized number of a given floating point number system.
          Fermi’s floating point units handle subnormal numbers in hardware, allowing values to gradually underflow to zero with no performance penalty. 
-         Additionally, Fermi GPUs add support to double precision computation. <\p>
+         Additionally, Fermi GPUs add support to double precision computation. </p>
             <img src= "https://github.com/GPU-Program-Bug-Study/Comprehensive-Study-on-GPU-Program-Numerical-Issues.github.io/blob/main/Images/fermi.JPG" alt= Fermi>
          
             
