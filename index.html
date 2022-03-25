@@ -31,12 +31,44 @@
          Fermi’s floating point units handle subnormal numbers in hardware, allowing values to gradually underflow to zero with no performance penalty. 
          Additionally, Fermi GPUs add support to double precision computation. </p>
           
+    <figure>
+    <img src= "../Images/fermi.JPG" alt= "Fermi">
+    <figcaption>Comparison of Fermi with previous GPUs</figcaption>
+    </figure>
         
-        <img src= "../Images/fermi.JPG" alt= "Fermi">
          
-        <p style="color:black;font-size:20px;"> fixing </p>
+        <p style="color:black;font-size:20px;"> With the development of Kepler GPUs, the support for atomic memory operations helped parallel programming to gain massive performance benefits[3]. 
+            Throughput of global memory atomic operations on Kepler GK110/210 are substantially improved compared to the Fermi generation. 
+            Atomic operation throughput to a common global memory address is improved by 9x to one operation per clock. 
+            Atomic operation throughput to independent global addresses is also significantly accelerated, and logic to handle address conflicts has been made more efficient. 
+            Atomic operations can often be processed at rates similar to global load operations. 
+             This speed increase makes atomics fast enough to use frequently within kernel inner loops, eliminating the separate reduction passes that were previously required by some algorithms to consolidate results. 
+             Kepler GK110 also expands the native support for 64-bit atomic operations in global memory. 
+             In addition to atomicAdd, atomicCAS, and atomicExch (which were also supported by Fermi and Kepler GK104), GK110 supports the following:  atomicMin,  atomicMax,  atomicAnd,  atomicOr,  atomicXor.
+            Other atomic operations which are not supported natively (for example 64-bit floating point atomics) may be emulated using the compare-and-swap (CAS) instruction. </p>
+        
+        <p style="color:black;font-size:20px;"> According to Dally et al. [1], the next level of support is a set of numerical libraries including CuBLAS, CuSparse, and CuFFT that provide highly optimized code for the key functions of many numerical programs. 
+         Applications can then leverage these libraries to exploit GPU capabilities. 
+         Today, over 600 HPC applications are accelerated by GPUs,9 including molecular dynamics codes such as GROMACS, NAMD, AMBER, and LAMMPS; weather codes such as WRF; fluid dynamics codes such as ANSYS and OpenFOAM; 
+        chemistry codes such as Gaussian, VASP, Quantum Espresso, and GAMESS; and structural analysis codes such as LS-DYNA and ANSYS. </p>
 
 
+       <p style="color:black;font-size:20px;"> Pascal GPUs  provide superior scheduling and overlapped load/store instructions to increase floating point utilization[4]. 
+        New innovations in our Pascal architecture, including native 16-bit floating point (FP) precision, allow GP100 to deliver great speedups for many Deep Learning algorithms. 
+        These algorithms do not require high levels of floating-point precision, but they gain large benefits from the additional computational power FP16 affords, and the reduced storage requirements for 16-bit datatypes. 
+        Storing FP16 data compared to higher precision FP32 or FP64 reduces memory usage of the neural network and thus allows training and deploying of larger networks. 
+        Using FP16 computation improves performance up to 2x compared to FP32 arithmetic, and similarly FP16 data transfers take less time than FP32 or FP64 transfers.
+        Also, The atomic addition operation in global memory has been extended to include FP64 data. 
+        The atomicAdd() function in CUDA now applies to 32 and 64-bit integer and floating-point data. 
+        The rounding mode for floating-point is round-to-nearest-even for all floating-point atomic add operations (formerly, FP32 atomic addition used round-to-zero).</p>
+   
+     <figure>
+    <img src= "../Images/pascal.JPG" alt= "Fermi">
+    <figcaption>Tesla P100 Compared to Prior Generation Tesla products</figcaption>
+    </figure>
+          
+        
+        
     </body>
     <body>
        <h2> <a href="https://github.com/GPU-Program-Bug-Study/Comprehensive-Study-on-GPU-Program-Numerical-Issues.github.io/blob/main/AStudyonNumericalBugs.csv" style="text-decoration: underline;">Raw Data</a></h2>
