@@ -33,7 +33,7 @@
           
     <figure>
     <img src= "../Images/fermi.JPG" alt= "Fermi">
-    <figcaption>Comparison of Fermi with previous GPUs</figcaption>
+    <figcaption>Comparison of Fermi with previous GPUs[2]</figcaption>
     </figure>
         
          
@@ -63,17 +63,66 @@
         The rounding mode for floating-point is round-to-nearest-even for all floating-point atomic add operations (formerly, FP32 atomic addition used round-to-zero).</p>
    
      <figure>
-    <img src= "../Images/pascal.JPG" alt= "Fermi">
-    <figcaption>Tesla P100 Compared to Prior Generation Tesla products</figcaption>
+    <img src= "../Images/pascal.JPG" alt= "Pascal">
+    <figcaption>Tesla P100 Compared to Prior Generation Tesla products [4]</figcaption>
     </figure>
           
+      <p style="color:black;font-size:20px;">  Tesla V100 GPUs deliver industry-leading floating-point and integer performance [5].
+       The Tesla V100 GPU contains 640 Tensor Cores: eight (8) per SM and two (2) per each processing block (partition) within an SM. 
+      In Volta GV100, each Tensor Core performs 64 floating point FMA operations per clock, and eight Tensor Cores in an SM perform a total of 512 FMA operations (or 1024 individual floating point operations) per clock.
+      For deep learning inference, V100 Tensor Cores provide up to 6x higher peak TFLOPS compared to standard FP16 operations on P100. 
+      Tensor Cores and their associated data paths are custom-designed to dramatically increase floating-point compute throughput with high energy efficiency. </p>
+      
+    <figure>
+    <img src= "../Images/volta.JPG" alt= "Volta">
+    <figcaption>Comparison of NVIDIA Tesla GPUs [5]</figcaption>
+    </figure>
         
+      <p style="color:black;font-size:20px;"> A Turing 102 GPU contains 576 Tensor Cores: eight per SM and two per each processing block within an SM [6]. 
+      Each Tensor Core can perform up to 64 floating point fused multiply-add (FMA) operations per clock using FP16 inputs. 
+      Eight Tensor Cores in an SM perform a total of 512 FP16 multiply and accumulate operations per clock, or 1024 total FP operations per clock. 
+      The new INT8 precision mode works at double this rate, or 2048 integer operations per clock. 
+       Turing Tensor Cores provide significant speedups to matrix operations and are used for both deep learning training and inference operations in addition to new neural graphics functions. </p>
+
+     <figure>
+    <img src= "../Images/turing1.JPG" alt= "Turing">
+    <img src= "../Images/turing2.JPG" alt= "Turing">
+    <figcaption>Comparison of NVIDIA Pascal GP104 to Turing TU106 GPUs [6]</figcaption>
+    </figure>
         
+       <p style="color:black;font-size:20px;"> Ampere GPUs provide TensorFloat support to GPU architecture [1] [7]. 
+       New TensorFloat-32 (TF32) Tensor Core operations in A100 provide an easy path to accelerate FP32 input/output data in DL frameworks and HPC, running 10x faster than V100 FP32 FMA operations or 20x faster with sparsity.  
+       The Tensor Core architecture also supports high-throughput computation for different numerical representations, including binary (INT1), INT4, INT8, FP16, and BFloat16 (8-bit exponent, 7-bit mantissa). 
+       For FP16/FP32 mixed-precision DL, the A100 Tensor Core delivers 2.5x the performance of V100, increasing to 5x with sparsity. 
+       New Bfloat16 (BF16)/FP32 mixed-precision Tensor Core operations run at the same rate as FP16/FP32 mixed-precision. 
+       Tensor Core acceleration of INT8, INT4, and binary round out support for DL inferencing, with A100 sparse INT8 running 20x faster than V100 INT8. 
+       For HPC, the A100 Tensor Core includes new IEEE-compliant FP64 processing that delivers 2.5x the FP64 performance of V100. </p>
+        
+     <figure>
+    <img src= "../Images/ampere1.JPG" alt= "Ampere">
+    <img src= "../Images/ampere2.JPG" alt= "Ampere">
+    <figcaption>Comparison of NVIDIA Data Center GPUs [6]</figcaption>
+         
+    </figure>
     </body>
+    
     <body>
        <h2> <a href="https://github.com/GPU-Program-Bug-Study/Comprehensive-Study-on-GPU-Program-Numerical-Issues.github.io/blob/main/AStudyonNumericalBugs.csv" style="text-decoration: underline;">Raw Data</a></h2>
        <iframe src="https://docs.google.com/spreadsheets/d/1zr1Y6kvlGrvOrY_8j0j34DdDA-WepiAg-sudIfl1RZs/edit?usp=sharing/pubhtml?widget=true&amp;headers=false" loading allowfullscreen width="100%" height="300"></iframe>
-
- 
     </body>
+    
+    <body> 
+        <h2> References: </h2>
+        <p>
+        1. Dally, William J., et al. “Evolution of the Graphics Processing Unit (GPU).” IEEE Micro, vol. 41, no. 6, 2021, pp. 42–51., doi:10.1109/mm.2021.3113475. <br> 
+        2. Nvidia Fermi Architecture Whitepaper. <a href="www.nvidia.com/content/PDF/fermi_white_papers/NVIDIAFermiComputeArchitectureWhitepaper.pdf">www.nvidia.com/content/PDF/fermi_white_papers/NVIDIAFermiComputeArchitectureWhitepaper.pdf. </a> <br>
+        3. CUDATM Compute Architecture: Kepler TM GK110/210 - Nvidia. <a href= "www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/NVIDIA-Kepler-GK110-GK210-Architecture-Whitepaper.pdf">www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/NVIDIA-Kepler-GK110-GK210-Architecture-Whitepaper.pdf </a>. <br>
+        4. Nvidia Fermi Architecture Whitepaper. <a href= "www.nvidia.com/content/PDF/fermi_white_papers/NVIDIAFermiComputeArchitectureWhitepaper.pdf">www.nvidia.com/content/PDF/fermi_white_papers/NVIDIAFermiComputeArchitectureWhitepaper.pdf </a> <br> 
+        5. Volta Architecture - Nvidia. <a href="images.nvidia.com/content/volta-architecture/pdf/volta-architecture-whitepaper.pdf> images.nvidia.com/content/volta-architecture/pdf/volta-architecture-whitepaper.pdf </a>. <br>
+        6. Nvidia <a href="images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/technologies/turing-architecture/NVIDIA-Turing-Architecture-Whitepaper.pdf">images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/technologies/turing-architecture/NVIDIA-Turing-Architecture-Whitepaper.pdf </a>. <br> 
+        7. Nvidia A100 Tensor Core GPU Architecture <a href="images.nvidia.com/aem-dam/en-zz/Solutions/data-center/nvidia-ampere-architecture-whitepaper.pdf">images.nvidia.com/aem-dam/en-zz/Solutions/data-center/nvidia-ampere-architecture-whitepaper.pdf</a>. <br>
+            </p>
+
+    </body>
+    
 </html>  
