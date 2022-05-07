@@ -1,0 +1,276 @@
+Link,Issue description,root cause,symptom,fix
+"""https://github.com/ray-project/ray/issues/7853""","""[rllib] ValueError: Reward should be finite scalar, got nan (<class 'float'>)""",special value bug,value error NAN,log_std parameter should be smaller
+"""https://github.com/pyvista/pyvista/issues/1010""","""pyvista.add_arrows argument 'mag' producec error when using float""",casting issue datatype,error,pass vectors of float
+"""https://github.com/pytorch/pytorch/issues/48576""","""how to avoid the precision loss(float32) caused by the gradient accumulation of Ring Allreduce in the case of ddp""",precision issue,wrong results,fixing the number of rings 
+"""https://github.com/pytorch/audio/issues/771""","""√∞≈∏¬ê‚Ä∫ Bug: SoxEffectsChain returns wrong result for float32 wav""",datatype issue,wrong results,update method
+"""https://github.com/napari/napari/issues/1854""","""Tab completion in QT console causes float divide by zero error""",precision issues,crash,correct parameters
+"""https://github.com/jiesutd/NCRFpp/issues/158""","""ZeroDivisionError: float division by zero""",precision issues,crash,use large parameters
+"""https://github.com/apache/incubator-mxnet/issues/19472""","""[Bug][2.0] GluonNLP BART model float16 error""",casting datatype issue ,error,use casting correctly
+"""https://github.com/ROCmSoftwarePlatform/AMDMIGraphX/issues/210""","""python API faults on float16 example where float32 works""",data type isse,error runtime,add supported data types
+"""https://github.com/pytorch/pytorch/issues/48163""","""nn.functional.interpolate backward in fp16 is extremely slow""",datatype issue,performance issue,chage datatype
+"""https://github.com/pytorch/fairseq/issues/2907""","""--fp16 utlizes significantly higher memory and results in OOM""",environmental issue,performance issue,change device
+"""https://github.com/huggingface/transformers/issues/8559""","""TFGPT2LMHeadModel fp16 support""",data type issue,error runtime,use casting
+"""https://github.com/huggingface/transformers/issues/8403""","""[s2s finetune] huge increase in memory demands with --fp16""",data type ,performance issue,use autocast
+"""https://github.com/NVIDIA/TensorRT/issues/572""","""fp16 mode takes much more time than fp32""",data type,slow performance,use regular dt instead of strict datatype
+"""https://github.com/tensorflow/tensorflow/issues/43845""","""\""No gradients provided\"" with GradientDescentOptimizer if not using float variable""",data type issue,error,fix data type
+"""https://github.com/tensorflow/tensorflow/issues/34849""","""TF 2.0 - WARNING - dense_features is casting an input tensor from dtype float64 to the layer's dtype of float32""",data type issue,error,fix data type manually
+"""https://github.com/tensorflow/tensorflow/issues/23861""","""matmul with large matrices fails with float16, but succeeds with float32""",data type issues,error,update versions
+"""https://github.com/tensorflow/probability/issues/1127""","""Lack of tfd.Categorical support on CPU in XLA in float64""",data type issue,error,use cast
+"""https://github.com/rapidsai/cudf/issues/6429""","""[BUG] Performing `to_pandas` in `to_json` results in conversion to float columns when there is a null value present""",special values,wrong results,convert nulls to fp64
+"""https://github.com/rapidsai/cudf/issues/6418""","""[BUG] Incorrect precision of floating values are being written to csv""",precision issues/truncation,wrong results ,fix the operation to higher precision
+"""https://github.com/pytorch/pytorch/issues/46702""","""torch.multinomial behave unexpectedly on float16 GPU input tensor""",precision issue,wrong results ,use correct expressions/ parameters
+"""https://github.com/pytorch/pytorch/issues/46391""","""Warnings during compiling: floating-point value does not fit in required integral type""",operator bug,error,add floating point return values suport
+"""https://github.com/pytorch/pytorch/issues/24213""","""torch.utils.dlpack.from_dlpack causes conversion of CuPy float64 tensor to float 16""",precision issue ,wrong results ,use proper expression
+"""https://github.com/huggingface/transformers/issues/7810""","""Metrics calculate error: can only calculate the mean of floating types. Got Bool instead""",data type bug ,wrong results,proper function 
+"""https://github.com/tensorflow/tensorflow/issues/43928""","""Using Orthogonal initializer in dense layer with backend set to fp16 gets stuck""",datatype bug,program stuck,ignore the half precision 
+"""https://github.com/pytorch/pytorch/issues/46238""","""Simple model cannot converge with fp16 precision using torch.cuda.amp""",precision issue ,different results,change versions
+"""https://github.com/pytorch/pytorch/issues/45968""","""DDP fp16_compress_hook communication hook increases peak memory """,operator issue,different results,add corect function with datatype
+"""https://github.com/pytorch/pytorch/issues/45724""","""torch.matmul output contains some nan value for large size fp16 tensors in V100 GPU""",special value bugs,different results,fix library issues
+"""https://github.com/pytorch/pytorch/issues/20634""","""SyncBN doesn't support fp16 inputs with fp32 parameters""",data type issue,error,do manually conversion fp 16 to fp32
+"""https://github.com/open-mmlab/mmdetection/issues/4035""","""Test Albu with mask_rcnn_r50_fpn_albu_1x_coco.py failure""",operator issue,error,use another function 
+"""https://github.com/PyTorchLightning/pytorch-lightning/issues/4427""","""Gradient accumulation fails with fp16 precision""",operator isssue,error,
+"""https://github.com/NVIDIA/TensorRT/issues/816""","""Slow 3D convolution on RTX 2070 (by using -fp16, too)""",precision issue,slow performance,increase the values
+"""https://github.com/thrust/thrust/issues/1268""","""[NV 200636681] Compile Time Failure \""implicit conversion from 'const uint_type' to 'float'\"" with Clang 10.0.0/gpgpu/cuda_a on Ubuntu18.04/x86_64""",environment issue,program failure,update support 
+"""https://github.com/tensorflow/models/issues/9186""","""TypeError: ('Not JSON Serializable:', tf.float32)""",datatype isssue,error,correct the expression
+"""https://github.com/rapidsai/cudf/issues/6224""","""[BUG] A column with `inf` values is being treated as \""object\"" dtype instead of \""float\""""",special value bugs,wrong results,add inf parsing for floats
+"""https://github.com/pytorch/pytorch/issues/44013""","""python value of type 'float' cannot be used as a value in with @torch.jit.script""",data type issue,error,use as a function parameter/use as a constant 
+"""https://github.com/huggingface/transformers/issues/7052""","""TFBert activation layer will be casted into float32 under mixed precision policy""",precision ,bad performance,update versions 
+"""https://github.com/cornellius-gp/gpytorch/issues/1284""","""float16 support in gpytorch 1.2?""",precision ,perfrmance slow ,use proper casting (hard to fix) 1. Use lazy tensors 
+"""https://github.com/apache/incubator-mxnet/issues/16239""","""train_imagenet.py fails with float16 + alexnet """,data type issue ,error,change cuda version 
+"""https://github.com/TDAmeritrade/stumpy/issues/194""","""Add Support for float32 Inputs for gpu_stump""",precision issue ,error on misaligned addresses ,only supports fp64
+"""https://github.com/NVIDIA/spark-rapids/issues/837""","""[BUG] Distinct count of floating point values differs with regular spark""",special value bugs,incorrect issue,proper implementation of operation 
+"""https://github.com/tmabraham/UPIT/issues/12""","""Is to_fp16() Implemented Already?""",precision issue ,error,add mixed precision support
+"""https://github.com/microsoft/DeepSpeed/issues/426""","""when i  disable fp16 √Ø¬º≈ígot error: 'lr_this_step' referenced before assignment.""",precision issue ,error,wait till automatic adjusment in algo
+"""https://github.com/csarofeen/pytorch/issues/362""","""reduction with fp16 cast generates wrong kernel indexing """,precision issue ,wrong results,add fp16 support 
+"""https://github.com/apache/incubator-mxnet/issues/19118""","""[Bug][Numpy] MXNet fp16 initialization bug""",data type issue,error,correct expression 
+"""https://github.com/PaddlePaddle/Paddle/issues/27205""","""\""Add bfloat16 data type\"" √•¬º‚Ä¢√®¬µ¬∑bert fp16 √¶¬®¬°√•≈æ‚Äπ√®¬Æ¬≠√ß¬ª∆í√¶≈í‚Äö√¶≈Ω‚Ä∞""",datatype issue,error,use correct expression
+"""https://github.com/tensorflow/tensorflow/issues/42392""","""tf-nightly: 'bfloat16' in namespace 'Eigen' does not name a type.""",datatype issue,error,update versions 
+"""https://github.com/tensorflow/serving/issues/1725""","""Very slow performance on extracting grpc request results using .float_val""",data type issue ,slow performance,use correct method
+"""https://github.com/pytorch/pytorch/issues/43211""","""torch.norm gives NaN gradient when I input small-value float16 tensor""",special value bugs,wrong output,clamp numbers too small for fp16
+"""https://github.com/open-mmlab/mmdetection/issues/3581""","""CORNER NET: AssertionError: RandomCenterCropPad needs the input image of dtype np.float32, please set \""to_float32=True\"" in \""LoadImageFromFile\"" pipeline""",datatype issue,error,fix the function
+"""https://github.com/microsoft/onnxruntime/issues/4147""","""cumsum and topk float16 support""",datatype issue ,slow/error,add support 
+"""https://github.com/gpuweb/gpuweb/issues/1035""","""Bit preserving floating point conversion expressions""",precision issue ,inconsistent ,add bit preserving operation
+"""https://github.com/huggingface/transformers/issues/6203""","""Issue with fp16_opt_level default""",datatype issue,error,fix commands
+"""https://github.com/tensorflow/tensorflow/issues/41845""","""Tensorflow raises exception in eager mode but works in graph mode \""AttributeError: 'float' object has no attribute '_id'\""""",datatype issue ,error message,use tensor instead float 
+"""https://github.com/tensorflow/tensorflow/issues/41783""","""TensorFlow 2.2 using tf.float16 executes only on CPU""",data type issue ,performance,some operations work only in cpu and not gpu. 
+"""https://github.com/tensorflow/tensorflow/issues/40357""","""[TF Lite] TfLiteGpuDelegate Init: CONV_2D: Unsupported data type for float32 tensor""",environment issue,performance,int works well in cpu than gpu. Use cpu 
+"""https://github.com/tensorflow/models/issues/8878""","""TypeError: Expected int32 passed to parameter 'n' of op 'QueueDequeueManyV2', got 1.0 of type 'float' instead.""",precision ,error message,casting batch_size to int work 
+"""https://github.com/pytorch/vision/issues/2512""","""Pad() fails on floating point image with TypeError""",operator issue,error,fix the code 
+"""https://github.com/pytorch/pytorch/issues/41779""","""Wrong gradient for torch.norm(x, p=float('inf')) when input tensor has non-unique max values""",special value bugs,wrong results,correct the parameter values in the function 
+"""https://github.com/pymc-devs/pymc3/issues/2115""","""OPVI does not seem to work in float32""",precision issue ,stuck ,use strict_float32
+"""https://github.com/pymc-devs/pymc3/issues/1640""","""Cast input data and testvalues to theano.config.floatX""",precision issue ,failure,needs automatic casting not manual casting
+"""https://github.com/mrdoob/three.js/issues/19876""","""NaN in float texture""",special value bugs,crash,do nan checks 
+"""https://github.com/GPUOpen-Drivers/AMDVLK/issues/94""","""float16 support for Polaris/Baffin ?""",precision issue ,performance,add fp16 for mathematical functions 
+"""https://github.com/pytorch/pytorch/issues/41663""","""[Bug] mean of gumbelsoftmax output is nan when fp16""",special value bugs,wrong result ,use internal operations larger than the smallest value offp16
+"""https://github.com/pytorch/pytorch/issues/41527""","""torch.nn.functional.layer_norm returns nan for fp16 all 0 tensor""",special value bugs,wrong result ,small change in value lead to nan (use large epsilon)
+"""https://github.com/opencv/opencv/issues/17969""","""YoloV4 error when running fp32""",environmental issue,error,fix the version 
+"""https://github.com/open-mmlab/mmdetection/issues/3315""","""faster_rcnn_r50_fpn training one of my own datasets gets loss_bbox=nan problem""",special value bugs,wrong result ,too small values. Use large values 
+"""https://github.com/huggingface/transformers/issues/5651""","""T5 fp16 overflow in forward (T5DenseReluDense)""",special value bugs,wrong result ,fix the parameters 
+"""https://github.com/PyTorchLightning/pytorch-lightning/issues/2673""","""trainer.test after fp16 training with apex""",environmental isssue,fail/error,upgrade versions 
+"""https://github.com/PyTorchLightning/pytorch-lightning/issues/2564""","""Logging loss is extremely large when training with fp16""",precision bug,wrong result ,fix the loss function for fp16
+"""https://github.com/NVIDIA/TensorRT/issues/726""","""BERT demo --fp16 build error: ERROR: (Unnamed Layer* 2) [PluginV2DynamicExt]: could not find any supported formats consistent with input/output data types""",data type  issue,error,fix function that uses fp16
+"""https://github.com/tensorflow/tensorflow/issues/40742""","""compilation of rule '//tensorflow/python:bfloat16_lib' failed when building TF2.2 from source""",data type issue,build failure,fix the support
+"""https://github.com/tensorflow/tensorflow/issues/40688""","""C++ compilation of rule '//tensorflow/python:bfloat16_lib' failed""",data type issue,build failure,fix bfloat16 support
+"""https://github.com/tensorflow/tensorflow/issues/40308""","""TypeError: Expected int64, got 1e-07 of type 'float' instead : FasterRCNN tensorflow 2.x""",operator issue ,error,fix the function parameter
+"""https://github.com/tensorflow/tensorflow/issues/40167""","""GPU delegate not as accurate as NNAPI reference  on 16float models on Style Transfer example. tensorflow-lite""",precision issue ,wrong result,use large values
+"""https://github.com/pytorch/pytorch/issues/40580""","""Multiply a bfloat16 tensor with a double tensor leads to RuntimeError""",data type issue ,error,only supports bfloat16 types others fail 
+"""https://github.com/gfx-rs/wgpu/issues/362""","""copy_buffer_to_buffer with size 0 causes floating point exception on Metal""",precision issue ,error,check for bounds with 0 
+"""https://github.com/facebookresearch/PyTorch-BigGraph/issues/147""","""RuntimeError: Function AddBackward0 returned an invalid gradient at index 1 - expected type TensorOptions(dtype=float, device=cpu, layout=Strided, requires_grad=false) but got TensorOptions(dtype=float, device=cuda:0, layout=Strided, requires_grad=false)""",data type issue ,error,assign the tensors to the same device 
+"""https://github.com/deepset-ai/FARM/issues/395""","""Regression label float to int conversion bug""",precision issue ,result,fix the casting 
+"""https://github.com/tensorflow/addons/issues/1920""","""LookAhead + RAdam + mixed_fp16 = apply_gradients() got an unexpected keyword argument 'experimental_aggregate_gradients'""",operator  issue,error,fix missing arguments 
+"""https://github.com/huggingface/transformers/issues/5300""","""T5ForConditionalGeneration fp16 nan loss""",special value bugs,wrong results,solve optimization bugs 
+"""https://github.com/PaddlePaddle/Paddle/issues/17397""","""Training with fp16 fails due to not registered operator.""",data type issue ,error,disable fp16
+"""https://github.com/NVIDIA/TensorRT/issues/585""","""int8 mode only 5-10% faster than fp16""",precision issue ,slow performance,int 8 does not work on all kernels 
+"""https://github.com/tensorflow/tensorflow/issues/39985""","""Conv3D operations are not using tensor cores with mixed float16 policy""",environmental issue ,slow performance,update library versions 
+"""https://github.com/tensorflow/tensorflow/issues/39287""","""Using tf.nn.softmax with tensor of dtype `int321 throws exception - works fine with float32""",precision issue ,wrong results,tf does not support int32 change the type 
+"""https://github.com/tensorflow/models/issues/8576""","""object of type <class 'numpy.float64'> cannot be safely interpreted as an integer""",environmental issue ,error,upgrade/downgrade numpy version 
+"""https://github.com/rapidsai/cudf/issues/5098""","""[BUG] Casting floating-point to string produces incorrect value for negative zero""",special value bugs,incorrect results,check for -0 correctly 
+"""https://github.com/pyvista/pyvista/issues/713""","""Issue with SetSpacing in UniformGrid.points, not stable in case of float spacing""",operator issue ,error,use a different function
+"""https://github.com/pytorch/pytorch/issues/38018""","""median with float64, lot of nans, and dim=1 returns random results in CUDA""",special value bugs,random values,check for two nans
+"""https://github.com/onnx/onnx/issues/2801""","""float16 support for cumsum and topk""",data type bug ,incorrect results,add the support 
+"""https://github.com/gpuweb/gpuweb/issues/775""","""scientific notation is not permitted in float literals""",precision issue ,error,change expression 
+"""https://github.com/google/automl/issues/351""","""New mixed_float16 results by a very slow training""",data type bug,slow performance,update tensorflow version 
+"""https://github.com/glotzerlab/hoomd-blue/issues/641""","""precision of uniform floating point numbers""",precision issue ,error,use large numbers instead of small epsilons 
+"""https://github.com/PyTorchLightning/pytorch-lightning/issues/1876""","""Load batches as float16?""",data type issue ,performance,some parameters should be converted to fp16
+"""https://github.com/BlazingDB/blazingsql/issues/668""","""[BUG] Union All floats fails with datatype mismatch""",casting data type issue ,error,use proper concatenation of datattype 
+"""https://github.com/huggingface/transformers/issues/4586""","""T5Model in fp16 still yield nan with more complex examples""",special value bugs,different results,use large values 
+"""https://github.com/huggingface/transformers/issues/4287""","""T5 fp16 forward yields nan""",special value bugs,different results,use floats instead fp16 
+"""https://github.com/tensorflow/tensorflow/issues/38850""","""Mixed Precision + Gaussian Noise throws data type error float16 / float 32""",data type issue ,error,fixed expressions that use cases (commits) 
+"""https://github.com/tensorflow/tensorflow/issues/38381""","""Casting from float32 to uint8 results in wrong value despite being from 0 to 255""",precision issue ,wrong results,proper casting 
+"""https://github.com/tensorflow/serving/issues/1589""","""Performance issue with tf serving QPS and client latency on float16 NWHC data""",data typeissue ,bad performance,add fp16 
+"""https://github.com/pytorch/xla/issues/1955""","""Mixed precision training slower than float32""",data type issue ,slow performance,fix the expression 
+"""https://github.com/pytorch/pytorch/issues/36807""","""Regression with explicit type conversion from float to uint8 on gpu devices.""",precision casting issue ,wrong results,do cast testing to catch issues
+"""https://github.com/microsoft/onnxruntime/issues/3736""","""Trouble running model with float64 input""",casting precision issue ,error,convert all weights and biases to same type 
+"""https://github.com/microsoft/onnxruntime/issues/3735""","""Loading float16 model fails""",data type issue ,error,use float32
+"""https://github.com/gpuweb/gpuweb/issues/709""","""support C99 hex float literals to accurately capture float values""",precision issue ,wrong results ,add hex float support 
+"""https://github.com/awslabs/djl/issues/49""","""Mx Net Engine truncates float values to integers on systems with a German locale""",precision issue ,incorrect results,
+"""https://github.com/ROCmSoftwarePlatform/MIOpen/issues/96""","""Segmentation fault at miopenFindConvolutionBackwardWeightsAlgorithm for half float""",data type issue ,error,fix the compiler issue 
+"""https://github.com/pytorch/xla/issues/1936""","""fp16 (not bf16) support""",data type issue ,error,add fp16 support 
+"""https://github.com/huggingface/transformers/issues/3831""","""AlbertModel output is not fp16""",casting issue precision ,error,do not use type conversions in Opt level 1
+"""https://github.com/tensorflow/tensorflow/issues/34782""","""[tf.keras] Mixed precision policy \""mixed_bfloat16\"" not supported in Keras compile""",data type issue ,error,up tf-nightly version 
+"""https://github.com/tensorflow/addons/issues/1282""","""ValueError for RSquare metric - requested dtype float32 for Tensor with dtype float64""",data type issue ,error,use self.dtype for floats 
+"""https://github.com/kovidgoyal/kitty/issues/2446""","""ValueError from pre-render on font resize√¢‚Ç¨‚Äùcannot convert float NaN to integer""",special value bugs,error,fix the values on variables
+"""https://github.com/facebookresearch/faiss/issues/860""","""GpuIndexIVFPQ's quantizer can't use float16""",data type issue ,error,implement float16 quantizer 
+"""https://github.com/UIUC-PPL/charm/issues/2754""","""Running with fewer PEs that GPUs fails with floating point exception""",operator issue ,error,have values greater than number of GPUs fpr gpu-gpu communication 
+"""https://github.com/pytorch/vision/issues/1934""","""torchvision.models.detection.fasterrcnn_resnet50_fpn has loss_rpn_box_reg exploding to nan after evaluation""",special value bugs,wrong output,correct the method
+"""https://github.com/NVIDIA/TensorRT/issues/420""","""TRT7 onnx parser error when building fp16 engine""",precision issue ,error,use the setPrecision on each of the potential fp16 layers along with the STRICT_TYPES flag to search for the bad layer
+"""https://github.com/tensorflow/tensorflow/issues/37123""","""Unsupported object type float""",datatype  bugs,error,Checking the dataframe with†np.unique(df[column]†and†df[df.isnan()]
+"""https://github.com/tensorflow/tensorflow/issues/36696""","""UpSampling2D doesn't support bfloat16 in TF 2.1""",data type  bug ,error,fix in nightly build 
+"""https://github.com/tensorflow/models/issues/2961""","""InvalidArgumentError: TypeError: 'numpy.float64' object cannot be interpreted as an integer""",environment issue ,error,downgrade numpy version 
+"""https://github.com/tensorflow/models/issues/2841""","""random_pad_image throwing a \""type int32 that does not match type float32\"" error""",data type bug ,error,fix the expression 
+"""https://github.com/pytorch/pytorch/issues/33651""","""torch.tril_indices returns a float tensor on cpu on master""",operator issue ,error,specify dtype 
+"""https://github.com/catboost/catboost/issues/1177""","""CatBoost predict differently -> if float values are rounded to less than 9 decimals when training""",precision issue ,results,round off to 8 decimeals instead 9 
+"""https://github.com/GPflow/GPflow/issues/1244""","""GPFlow-2.0 - issue with default_float and mean variance""",precision ,error,fix the expression 
+"""https://github.com/pytorch/pytorch/issues/32750""","""torch.prod with internal upcasting (fp16 input, dtype=torch.float32 output) produces garbage""",operator issue ,garbage output,fix the function parameter
+"""https://github.com/OpenNMT/OpenNMT-py/issues/1724""","""fp16 zero division error on multiple GPUs""",data type issue ,error,restrict to fp32 only
+"""https://github.com/KhronosGroup/glslang/issues/2076""","""Extension not supported: GL_NV_gpu_shader5, GL_NV_shader_atomic_fp16_vector""",precision issue ,error,use non atomic floats 
+"""https://github.com/tensorflow/tensorflow/issues/36358""","""TypeError: '>' not supported between instances of 'Nonetype' and 'float'""",operator issue ,error,replace code 
+"""https://github.com/tensorflow/tensorflow/issues/35883""","""AlphaDropout & mixed_float16 - Op has type float32 that does not match type float16""",data type issue ,error,try with float32
+"""https://github.com/tensorflow/tensorflow/issues/35817""","""LayerNormalization dtype issues with mixed_precision.Policy('mixed_float16')""",data type issue ,error,update tf-nightly version
+"""https://github.com/tensorflow/tensorflow/issues/35553""","""set_floatx('float16') slow to build/compile""",data type issue ,slow performance,use mixed precision instead float 16
+"""https://github.com/schyun9212/maskrcnn-benchmark/issues/10""","""INVALID_GRAPH : This is an invalid model. Type Error: Type 'tensor(float)' of input parameter (44) of operator (Equal) in node () is invalid.""",operator issue ,error,fix the expression using the operations
+"""https://github.com/microsoft/nni/issues/1589""","""ValueError: Out of range float values are not JSON compliant""",special value bugs,error,allow nan data metrics
+"""https://github.com/dmlc/xgboost/issues/5226""","""Unit test failing due to floating-point fluctuation""",precision issue ,different results ,prevents weight from getting close to 0
+"""https://github.com/diku-dk/futhark/issues/839""","""Add break on floating-point exceptions in the repl""",special value bugs,crash,add breakpoints on nan
+"""https://github.com/PaddlePaddle/PaddleDetection/issues/180""","""What's expected performance float32/float16?""",data type issue ,slow performance,change the batch sizes to fpn
+"""https://github.com/under-Peter/OMEinsum.jl/issues/79""","""error with high precision numbers on GPU""",precision issue ,error,fix the dispatch 
+"""https://github.com/tensorflow/tensorflow/issues/35307""","""I got nan value when I to predict in cpu,this model that I trained it in gpu""",special value bugs,inccorect results,update versions in tf
+"""https://github.com/tensorflow/tensorflow/issues/35309""","""tf.math.sigmoid precision issues on GPU""",precision issue,different results,change in tf version 
+"""https://github.com/facebookresearch/meshrcnn/issues/16""","""GPU utilization, latency during inference and model accuracy""",precision issue ,different results ,"modified several other parameters in the solver such as the # iterations, step size, warm up iterations"
+"""https://github.com/uber/ludwig/issues/663""","""Difference in accuracy between tensorflow-GPU and tensorflow-CPU with 10x kfold""",precision issue ,different results,change the configuration
+"""https://github.com/lucidrains/reformer-pytorch/issues/36""","""torch.nn.DataParallel causes strange GPU memory overflow""",data type issue ,slow performance,use single gpu
+"""https://github.com/tensorpack/tensorpack/issues/1421""","""total_loss becomes nan after some time during training with two GPU's. No issues with single GPU.""",special value bugs,incorrect results,dataset works well in one gpu
+"""https://github.com/tensorflow/tensorflow/issues/30056""","""multi-gpu training: tf.compat.v1.scatter_sub() operation throws exception""",operator issue,error/exception,change the script 
+"""https://github.com/explosion/spaCy/issues/4916""","""Spacy 2.2.3 gpu prediction gives less accurate result than spacy 2.0.18 cpu""",environmental issue,wrong numbers,install python completely 
+"""https://github.com/choderalab/perses/issues/657""","""Change endstate validation test to use GPU in double precision mode""",environmental issue ,slow performance,support doubles with cuda
+"""https://github.com/apache/incubator-mxnet/issues/17792""","""Softmax raises exception for zero-size tensor on GPU""",operator issue ,error,"fix the softmax, logsoftmax methods"
+"""https://github.com/dmlc/xgboost/issues/5632""","""XGBoost 1.1.0 SNAPSHOT gpu_hist still numerically unstable""",data type issue ,different values,data partitioning or updating the cuda version
+"""https://github.com/ClangBuiltLinux/linux/issues/1017""","""-Winteger-overflow in drivers/gpu/drm/amd/amdgpu/amdgpu_device.c""",precision issue ,error,fixing the int 
+"""https://github.com/tensorflow/tensorflow/issues/40805""","""LSTM loss and accuracy values differ greatly between GPU and CPU implementation""",precision issue ,different values,fix the loss function
+"""https://github.com/google/jax/issues/3270""","""ops.index_add double precision performance on GPUs""",environment issue ,slow performance,fix the atomic add method 
+"""https://github.com/tensorflow/models/issues/7661""","""Dose the data division for multi-gpu destruct the accuracy?""",precision issue ,different results,lower tf version
+"""https://github.com/tensorflow/addons/issues/1942""","""Failed GPU optimizer test with mixed precision""",data type issue ,error ,adding gradient support 
+"""https://github.com/livepeer/verification-classifier/issues/98""","""Test verifier accuracy when renditions transcoded by a GPU""",precision issue ,different results,fix the implementation
+"""https://github.com/tensorflow/tensorflow/issues/41657""","""NaN loss and accuracy when using MirroredStrategy on multiple GPUs (ROCm)""",special value bugs,performance issue,use 1 gpu
+"""https://github.com/PointCloudLibrary/pcl/issues/3583""","""Inaccurate results with gpu octree search example""",datatype issue ,innacurate results,radius search takes only single float 
+"""https://github.com/AlexeyAB/darknet/issues/6400""","""How to train YOLOv3_tiny_3l on g4dn.12xlarge 4 GPU (NVIDIA T4) -> *** buffer overflow detected ***""",precision issue ,error ,fix the implementation of anchor
+"""https://github.com/pytorch/pytorch/issues/44350""","""`mean` and `var` overflow on CPU and GPU""",precision issue ,results,support for higher precisions
+"""https://github.com/MouseLand/Kilosort2/issues/231""","""learnTemplates: Error in median() using gpuArray/nan when printing status of batch with 0 spikes""",special value bugs,error,ignore values with 0 
+"""https://github.com/PyTorchLightning/pytorch-lightning/issues/3382""","""'precision=16' doesn't change GPU memory consumption""",data type issue ,slow performance ,ignore pytorch autocast that doesn't use 16-bit floats 
+"""https://github.com/CliMA/Oceananigans.jl/issues/828""","""Obscure GPU error when time stepping a model with Julia 1.5 and Oceananigans v0.33.0""",data type casting issue ,slow performance,fix the method specified with proper type conversions 
+"""https://github.com/CliMA/Oceananigans.jl/issues/1010""","""Cannot use `Forcing`s with `field_dependencies` on GPU with Oceananigans v0.39.0""",datatype issue ,error,add support tuple{} type
+"""https://github.com/tensorflow/tensorflow/issues/44990""","""tf-gpu 2.3.1 get initial low accuracy compare to tf-gpu 2.1""",environmental issue ,different results,updates version fixed the previious version issue 
+"""https://github.com/tensorflow/tensorflow/issues/40072""","""tf.nn.relu on nan inputs returns zeros on GPU""",special value bugs,results,fixing nan issue by updating tf version
+"""https://github.com/pytorch/pytorch/issues/1810""","""\""nan\"" behaves differently in CPU and GPU""",special value bugs,cpu gpu results,stop using crazy large negative number s
+"""https://github.com/openmm/openmm/issues/2930""","""Low CustomNonbondedForce calculation accuracy with GPU platforms""",precision issue ,compare results,higher the precision
+"""https://github.com/dmlc/xgboost/issues/6228""","""gpu_hist integer overflows and OOM issues""",data type issue ,performance issue,limit the partition 
+https://github.com/rapidsai/cudf/issues/9672,[BUG] row range on window operations can overflow†#9672,precision issues overflow,wrong results ,lower the datatype
+https://github.com/rapidsai/cudf/issues/9597,[BUG] Cast Decimal64 to Decimal128 is really slow†#9597,precision issue ,performance issue ,add support 
+https://github.com/rapidsai/cudf/issues/9065,[BUG]†cudaErrorInvalidValue†when creating cudf.Series from float16 CuPy Series†#9065,data type issue,error,fix automatic casting
+https://github.com/rapidsai/cudf/issues/9014,[BUG] Wrong decimal values after changing data type†#9014,precision issue truncation,wrong results ,convert to decimal then round
+https://github.com/rapidsai/cudf/issues/7689,[BUG] Libcudf unary cast returns unexpected results when casting between decimal and int types†#7689,precision issue overflow,wrong results ,fix cast operation
+https://github.com/rapidsai/cudf/issues/7488,"[BUG] Problems converting String dtype Series with ""nan"" to Float (ValueError)†#7488",special value,value error NAN,use None 
+https://github.com/rapidsai/cudf/issues/7402,[BUG] std incorrectly calculated in dask†describe†calls for specific dataframe values†#7402,special value,wrong results ,lower the numbers
+https://github.com/rapidsai/cudf/issues/7284,[BUG] OverflowError when trying to replace†inf†values in an integer column†#7284,precision issues overflow,error ,handle overflow
+https://github.com/rapidsai/cudf/issues/7113,[BUG] read_parquet reads incorrect values when requested to read a portion of a file†#7113,special value bugs,wrong trsults,fix nulls with float 32
+https://github.com/rapidsai/cudf/issues/7056,[BUG] one_hot_encoding is not handling correctly for cases when data has†nan†values†#7056,special value ,wrong results ,handle nan and none 
+https://github.com/rapidsai/cuml/issues/4273,[BUG]DBSCAN.fit on empty array raise floating point exception and terminate python†#4273,datatype issue ,exception ,Throw an explicit excpetion if the input array is empty in DBSCAN.fit
+https://github.com/rapidsai/cuml/issues/3910,[BUG] RF : regression in GPU predict accuracy compared to CPU predict and scikit-learn predict†#3910,precision issue ,wrong results ,fix the algorithm 
+https://github.com/rapidsai/cuml/issues/3567,[BUG] Confusion matrix should convert dtype as necessary†#3567,datatype issue ,error ,fix type conversions 
+https://github.com/rapidsai/cuml/issues/3305,[BUG] Negative R-Squared with Nightly (0.17)†#3305,operator issue ,wrong values ,fix cuml method 
+https://github.com/rapidsai/cugraph/issues/1330,[BUG] PageRank Values Miscalculated with Float Weights†#1330,operator issue,wrong results ,fix the pagerank method 
+https://github.com/NVIDIA/cutlass/issues/144,LinearCombinationRelu epilogue has different behaviour between compute 7.0 and compute 7.5†#144,precision rounding issue,wrong results ,fix rounds to the nearest
+https://github.com/NVIDIA/cutlass/issues/124,minimum() operator in CUTLASS?†#124,operator issue,error,fix the implementation
+https://github.com/NVIDIA/cutlass/issues/106,Performance on tensor core†#106,data types issue,performance ,find best data amount to be run in each version
+https://github.com/NVIDIA/cub/issues/394,Unable to build with†-D__CUDA_NO_HALF_CONVERSIONS__†#394,data type issue,error,fix half conversions
+https://github.com/JuliaGPU/CUDA.jl/issues/962,Integer division error for the product of sparse times empty matrices†#962,special value bug 0 division,error,refactor the logic 
+,,,,
+,,,,
+"""https://github.com/cupy/cupy/issues/2904""","""cupy.einsum is very slow for elementwise operations""",data type issue,performance issue,change to tensor floats
+"""https://github.com/cupy/cupy/issues/3302""","""Element-wise power of ndarray is not accurate""",precision issue,wrong results ,fix the last digit 
+"""https://github.com/cupy/cupy/issues/3274""","""CUSOLVERError: CUSOLVER_STATUS_INVALID_VALUE""",precision issue,error,fix the library 
+"""https://github.com/cupy/cupy/issues/1912""","""cupy.cuda.memory.OutOfMemoryError: out of memory to allocate""",data type issue ,error,use reduction kernel
+"""https://github.com/cupy/cupy/issues/2780""","""`TypeError` when using `cupy.nanstd` and `cupy.nanvar`""",data type issue,error,fix datatype
+"""https://github.com/cupy/cupy/issues/3701""","""ValueError when loading .npy using np.load()""",data type issue unsupported,error,fix datatype 
+"""https://github.com/cupy/cupy/issues/3652""","""NaN when using big-endian arrays""",special value issue,wrong results ,use automatic conversions
+https://github.com/cupy/cupy/issues/3602,"""On how to enable users to use TF32 in CuPy""",datatype isse,different results,use correct versions of datatype
+"""https://github.com/cupy/cupy/issues/3568""","""cupy.percentile only calculates integer percentiles when the input data is an integer.""",data type issue,wrong results ,fix the operation
+"""https://github.com/cupy/cupy/issues/2360""","""Array indexing of sparse matrices""",precision issue,error,compress the numebrs
+"""https://github.com/cupy/cupy/issues/4009""","""Possible typo (\""dype\"" instead of \""dtype\"") in cufft.pyx""",operator issue,error ,fix the operator support
+"""https://github.com/cupy/cupy/issues/3909""","""Passing cupy functions into cupyx.scipy.ndimage.filters.generic_filter causes a TypeError""",data type issue,error ,unimplemented method
+"""https://github.com/cupy/cupy/issues/4122""","""cp.exp(0) should return 1.0 not array(1.0)""",data type issue,wrong values ,fix the data type
+"""https://github.com/cupy/cupy/issues/4121""","""Incorrect c type used for 64 bit integer (effects sort, unique and presumably various other functions)""",data type issue,wrong values ,fix the data type
+"""https://github.com/cupy/cupy/issues/4072""","""cupyx.scipy.sparse missing the @ operator, i.e.  __matmul__ and __rmatmul__""",operator issue,error,add the operator
+"""https://github.com/cupy/cupy/issues/2559""","""Single-precision `sum()` over certain axes sometimes deviates from NumPy's outcome""",precision issue,wrong values,fix the precision size
+"""https://github.com/cupy/cupy/issues/4354""","""suprising behavior of cupy.array on numpy views with base array of a different dtype""",data type issue,wrong values ,change operations 
+"""https://github.com/cupy/cupy/issues/4223""","""OverflowError: value too large to convert to int""",precision issue overflow,error,intermediate step computes overflow
+https://github.com/cupy/cupy/issues/6047,cupyx.scipy.signal.convolve2d: integer overflow when using mixed dtypes†#6047,precision issue overflow,error,add for checks 
+https://github.com/cupy/cupy/issues/5989,cupyx.scipy.signal.convolve2d yields a JitifyException: Runtime compilation†#5989,data type casting issue,error,adding support to datatype
+https://github.com/cupy/cupy/issues/5848,Indexing with assignment between broadcastable arrays is inconsistent with NumPy†#5848,data type issue,error,fix  the operation
+https://github.com/cupy/cupy/issues/5809,Issue of insert value in large matrix bug†#5809,precision issue,wrong value,change the numbers
+https://github.com/cupy/cupy/issues/5568,IndexError when convolving with float scalar†#5568,data type issue,error,fix the method
+https://github.com/cupy/cupy/issues/5537,Issue in cupyx/scipy/ndimage/_spline_prefilter_core.py with min() operation in large arrays for cupyx.scipy.ndimage.map_coordinates†#5537,data type issue,error,fix the operator instrics
+https://github.com/cupy/cupy/issues/5320,cp.array†turns some array into†nan†?†#5320,special value ,wrong results,fixing endieness or adding checks
+https://github.com/cupy/cupy/issues/5315,cupy.nanmedian bug report†#5315,special value,wrong results,fix nan checks correctly
+https://github.com/cupy/cupy/issues/5246,Wrong behavior of†cupy.random.Generator.integers†#5246,operator issue,wrong results ,fix operator
+https://github.com/cupy/cupy/issues/5175,CSC matrix constructor bug†#5175,operator issue,wrong results ,fix operator 
+https://github.com/cupy/cupy/issues/4896,Slow sum/mean/max/... matrix operations compared to PyTorch†#4896,environmental issue,performance issue,change environment
+https://github.com/cupy/cupy/issues/4891,[Issue] cp.matmul slower than np.matmul ??†#4891,environmental issue,bad performance ,mixed precision/change datatype
+https://github.com/cupy/cupy/issues/4550,ndimage.map_coordinates performs incorrectly with several order values†#4550,precision rounding issue,wrong results ,change precision values 
+https://github.com/cupy/cupy/issues/4136,the†get†function of the sparse matrix†csr†with stream does not give excepted result.†#4136,operator issue,wrong results,fix the operator
+https://github.com/cupy/cupy/issues/4082,Compilation error with cval=cp.nan in scipy.ndimage.interpolation.shift†#4082,special value,error,handle nan and inf
+https://github.com/cupy/cupy/issues/3984,cupy.cumsum unable to cast argument from list to cupy.ndarray in 8.0.0rc1†#3984,data type casting issue,error,handle explicit casting
+https://github.com/cupy/cupy/issues/3931,Performance issue : cupy is 800 times slower than numpy in linalg.solve()†#3931,operator issue,bad performance ,fix the operator to handle directly
+https://github.com/cupy/cupy/issues/3325,cupy.put behaves differently than numpy.put†#3325,data type issue ,value error ,only type scalar values 
+https://github.com/cupy/cupy/issues/3232,Lexsort output is incorrect†#3232,operator issue,error,fix the operator
+https://github.com/cupy/cupy/issues/6255,Wrong index calculation in constructing sparse random matrix†#6255,precision issue round error,wrong values ,fix the implementation
+https://github.com/cupy/cupy/issues/6214,Undefined behavior on overlapping†matmul†out†#6214,operator issue,wrong values,fix the operator
+https://github.com/cupy/cupy/issues/6207,Unable to convert some constants in cupy.jit†#6207,casting issue precision,error,add casting support
+https://github.com/cupy/cupy/issues/5909,ndarray.clip†signature does not match NumPy†#5909,operator issue,error,fix the operator 
+https://github.com/cupy/cupy/issues/5831,Random State returning inconsistent results†#5831,operator issue,wrong values,fix the operator 
+https://github.com/cupy/cupy/issues/5716,Incorrect output of†cupy.logaddexp()†#5716,special value bug,wrong results,fix operation
+https://github.com/cupy/cupy/issues/5704,Edge cases of compatibility in†numpy.eye()†#5704,overflow precision,error,fix the edge cases 
+https://github.com/cupy/cupy/issues/5647,cp.unique gives IndexError when passed an empty array.†#5647,operator issue ,error ,fix cp.unique
+https://github.com/cupy/cupy/issues/5580,copyto†bool array from complex array†#5580,precision casting,wrong results ,fix the casting
+https://github.com/cupy/cupy/issues/5527,unsafe cast from complex becomes NVRTC compile error†#5527,precision issue casting,error,fix the casting
+https://github.com/cupy/cupy/issues/5466,Random Generator wrong values for larger sizes more than 1d†#5466,operator issue,wrong results ,fix the operator
+https://github.com/cupy/cupy/issues/5328,Unexpected error while assigning array element†#5328,precision issue overflow,error,fix the int overflow
+https://github.com/cupy/cupy/issues/5296,Get segmentation fault with FFT callback function†#5296,environmental issue,error,fix or change the environment
+https://github.com/cupy/cupy/issues/6662,Complex number calculations differ from numpy#6662,precision issues,wrong results,changing the precision levels
+https://github.com/cupy/cupy/issues/6463,Very slow product for sparse matrices#6463,data type issue,bad performance,fix the data type
+https://github.com/cupy/cupy/issues/6426,cupy.asarray/cp.array fails to create from numpy ndarray with structured dtype†#6426,operator issue,error message,use custom kernel strategy
+https://github.com/cupy/cupy/issues/6255,Wrong index calculation in constructing sparse random matrix†#6255,operator issue,error message,fix the operator
+https://github.com/cupy/cupy/issues/6661,poly1d with int64 arrays -- unexpected output†#6661,operator issue,error message,fix the operator
+https://github.com/cupy/cupy/issues/6618,Include C libraries to user defined kernels†#6618,operator issue,error message,fix the operator
+https://github.com/cupy/cupy/issues/6577,cupy.full†makes casting in†safe†rule†#6577,casting issue data type,error message,add the support
+https://github.com/cupy/cupy/issues/6517,cupy.cumsum()†doesn't work in ROCm 5.0†#6517,operator issue,error message,fix the operator
+https://github.com/cupy/cupy/issues/6463,Very slow product for sparse matrices†#6463,data type issue,bad performance,fix the data type
+https://github.com/cupy/cupy/issues/6425,Large array std is different from numpy (CPU)†#6425,precision issues,wrong results,change the numerical precision
+https://github.com/cupy/cupy/issues/6400,cupy.nan_to_num does not accept cupy.nan†#6400,special value bug,produce wrong results and error,Add checks to nan
+https://github.com/ginkgo-project/ginkgo/issues/1002,what is the gko::remove_complex<ValueType>?†#1002,data type issue,error,fix the support
+https://github.com/ginkgo-project/ginkgo/issues/741,Precision for matmul apply()†#741,precision issue rounding,wrong results ,use fine precision values
+https://github.com/ginkgo-project/ginkgo/issues/606,[Error] inverse-iteration†#606,datatype issue,error,fix datatype support
+https://github.com/ginkgo-project/ginkgo/issues/547,Adding†remove_complex†to norms in general inside Ginkgo†#547,datatype issue,error,add support to datatype
+https://github.com/ginkgo-project/ginkgo/issues/423,Solvers do not preserve the real type of their parameters†#423,datat type isse,wrong results ,fix the data type issue
+https://github.com/NVIDIA/MatX/issues/142,[BUG] matmul throws a CUBLAS_STATUS_INVALID_VALUE exception when passed a permuted view†#142,operator issue ,error,fix the operator
+https://github.com/NVIDIA/MatX/issues/137,[BUG] Reduce operations give partly wrong results with 3D tensors.†#137,data type issue ,wrong results ,fix the datatype support
+https://github.com/NVIDIA/MatX/issues/126,[BUG] matx::matmul can't be performed on tensors created from user-defined pointers†#126,data type issue ,wrong results ,fix the datatype support
+https://github.com/NVIDIA/MatX/issues/121,[BUG] Tensors created from user-defined pointers cannot be printed†#121,data type issue ,wrong results ,fix the datatype support
+https://github.com/elixir-nx/nx/issues/199,Nx.power/2 on BinaryTensor fails when exponent is negative†#199,special value,wrong results ,fix negative exponent values 
+https://github.com/numba/numba/issues/7324,fast_matmul in docs example not working properly - returning wrong results†#7324,operator iisue,wrong results ,fix the operator behavior
+https://github.com/numba/numba/issues/7041,Trouble transferring array with string values on cuda†#7041,data type issue,error,implement type conversions
+https://github.com/numba/numba/issues/6965,CUDA: Atomics tests fail with NumPy 1.20†#6965,special value,error,check for the values input
+https://github.com/numba/numba/issues/6563,CUDA: Add support for passing tuples to kernels via vectorize†#6563,data type issue,error,add support for tuples
+https://github.com/numba/numba/issues/5820,Add back support for atomics that always return the non-NaN values†#5820,special value,wrong results ,add checks
+https://github.com/numba/numba/issues/5744,Issue with vectorize for GPU#5744,data type issue,error,fix the datatype
+https://github.com/numba/numba/issues/5642,Could numba support big integers for a * b?†#5642,precision data type issue,wrong results ,do not use large numbers
+https://github.com/numba/numba/issues/5391,the right way to jit a matrix dot function (why so slow?)†#5391,operator issue,bad performance,fix the operator
+https://github.com/numba/numba/issues/4907,Cuda: Using shared memory to add numbers results in overwriting†#4907,operator issue,wrong reults,use atomic operations
+https://github.com/numba/numba/issues/4668,Round segfaults in cuda jitted function if passed ndigits optional parameter†#4668,special value bug,wrong results ,handle NaN
+https://github.com/numba/numba/issues/4438,paralled numpy array error:†#4438,data type issue,error,fix the data type
+https://github.com/numba/numba/issues/4405,CUDA functions can be compiled but not called with Tuple and UniTuple arguments†#4405,datatype issue,error ,add support for tuples
+https://github.com/numba/numba/issues/4140,Numba CUDA kernels fail when passing 0-size cupy arrays†#4140,operator issue ,error,add support for 0 size arrays
+https://github.com/numba/numba/issues/4000,LoweringError when using sqrt in CUDA†#4000,precision issue,error,change the precision
+,,,,
+,,,,
+,,,,
