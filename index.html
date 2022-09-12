@@ -3,6 +3,486 @@
     <head>
         <h1>A Comprehensive Study on Numerical Issues in GPU Programs</h1>
     </head>
+    
+<h2 id="tables">Tables</h2>
+<p id="tableA">Table A shows the total GitHub repositories included in the study after performing the manual inspection</p>
+<label   for="tableA">Table 2: Summary of GitHub Issues</label>
+<table  class="table table-bordered table-hover table-condensed" name="tableA">
+    <thead><tr><th title="Field #1">GitHub Project</th>
+    <th title="Field #2">Stars</th>
+    <th title="Field #3">Commits</th>
+    <th title="Field #4">Contributors</th>
+    <th title="Field #5">Issues Included</th>
+    </tr></thead>
+    <tbody><tr>
+    <td>CuPy</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">62</td>
+    </tr>
+    <tr>
+    <td>TensorFlow</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">42</td>
+    </tr>
+    <tr>
+    <td>PyTorch</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">30</td>
+    </tr>
+    <tr>
+    <td>cuDF</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">15</td>
+    </tr>
+    <tr>
+    <td>Numba</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">14</td>
+    </tr>
+    <tr>
+    <td>Tranformers</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">10</td>
+    </tr>
+    <tr>
+    <tr>
+    <td>Gingko</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">5</td>
+    </tr>
+    <tr>
+    <td>cuML</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">5</td>
+    </tr>
+    <tr>
+    <td>TensorRT</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">5</td>
+    </tr>
+    <tr>
+    <td>Apache</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td>mmdetection</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td>PyTorch-Lightning</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td>MatX</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">4</td>
+    </tr>
+    <tr>
+    <td>Paddle</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td>Cutlass</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td>GPUweb</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td>Onnx</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td>xgboost</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">3</td>
+    </tr>
+    <tr>
+    <td>pyVista</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">2</td>
+    </tr>
+    <tr>
+    <td>cuGraph</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">2</td>
+    </tr>
+    <tr>
+    <td>CUDA.jl</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">2</td>
+    </tr>
+    <tr>
+    <td>pymc-dev</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">2</td>
+    </tr>
+    <tr>
+    <td>google</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">2</td>
+    </tr>
+    <tr>
+    <td>CLIMA</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">2</td>
+    </tr>
+    <tr>
+    <td>ray</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>napari</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>jiesutdNCRF</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+    <tr>
+    <td>AMDMIGraphX</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>Thrust</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>GPytorch</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>Stumpy</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>Spark-rapids</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>UPIT</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>DeepSpeed</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>CSAROpen</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>OpenCV</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>catboot</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>NX</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>Onnxruntime</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>mrdoob</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>AMDLk</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>WGPU</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>FARM</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>hoomd-blue</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>blazingsql</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>awslabs djl</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>MIOpen</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>Kitty</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+     <tr>
+    <td>faiss</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>Chaim</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>GPFlow</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+     <tr>
+    <td>OpenNMT</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>gslang</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>maskrcnn-benchmark</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+    <tr>
+    <td>futhark</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>Meinsum.jl</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>facebookresearch</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+     <tr>
+    <td>uber</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>tensorpack</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>spaCy</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>perses</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>linux</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>verification-classifier</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+   <tr>
+    <td>pointcloud</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+    <tr>
+    <td>darknet</td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right"></td>
+    <td align="right">1</td>
+    </tr>
+</tbody></table>
+<br/>
+<br/>
+    
+    
+    
     <body> 
         <head>
            <h2> Floating Point Support in GPU Architecture </h2>
