@@ -596,6 +596,23 @@ table, th, td {
        <iframe src="https://docs.google.com/spreadsheets/d/1OswKlInm_h6FnTnjfCuYJpcwigkuDnIeAYh3ffr5lgg/edit?usp=sharing/pubhtml?widget=true&amp;headers=false" loading allowfullscreen width="100%" height="300"></iframe>
     </body>
     
+    <body>
+      <h2> Script to run in GitHub Archive </p>
+      <p style="color:black;font-size:20px;"> SELECT DISTINCT issue_html, issue_title FROM (
+                  SELECT type, repo.name as repo, <br>
+                  JSON_EXTRACT(payload, '$.issue.html_url') as issue_html, <br>
+                  JSON_EXTRACT(payload, '$.issue.title') as issue_title,  <br>
+                  JSON_EXTRACT(payload, '$.issue.body') as issue_desc,    <br>
+                  JSON_EXTRACT(payload, '$.issue.state') as issue_state   <br>
+                  FROM `githubarchive.year.2019`<br>
+                  WHERE type = 'IssuesEvent'
+                   ) <br>
+                  WHERE ((lower(issue_title) LIKE '%flak%' or lower(issue_desc) LIKE '%flak%') OR (lower(issue_title) LIKE '%intermit%' or lower(issue_desc) LIKE '%intermit%'))
+        ORDER BY issue_html DESC; <br> </p>
+
+      
+      
+   </body>
     <body> 
         <h2> References: </h2>
         <p>
