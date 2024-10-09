@@ -613,6 +613,55 @@ table, th, td {
            <figcaption>Figure 1. Overview on Detecting Numerical Bugs in GPU programs</figcaption>
         </figure>
 
+      <h2>
+        Overview of GPU-NBDetect
+      </h2>
+
+      <p>
+        Our tool, GPU-NBDetect is designed from the findings made in our study. 
+        Table 1 in our paper summarizes these findings. 
+        The process of numerical bug detection in GPU-NBDetect begins from test input generation (F-7 and I-7 in Table 1)  followed by differential testing with CPU programs (F-8 and I-8 in Table 1), and applying varied manifestation strategies to trigger the bug (F-9, F-10, I-9, and I-10 in Table 1) based on the observed debugging techniques by GPU developers (F 11-14 and I 11-14 in Table 1).  
+        Next, we will highlight each component in GPU-NBDetect. 
+      </p>
+
+      <p>
+        GPU-NBDetect uses a template-based approach to <b>generate both GPU and CPU programs</b>. 
+        We leverage Python to dynamically generate C and CUDA files. 
+        For CPU program generation, the template reads an operator from a predefined operator list and integrates it into the main function. 
+        It also defines the input variables as arguments and includes necessary header files, such as math.h and floating-point exception commands. 
+        For GPU program generation, the template handles both the host and device code. 
+        The host code manages memory allocation, memory copying, and kernel invocation for the device-side operations. 
+        The necessary mathematical operators are directly inserted into the device code from the operator list. Once the CPU and GPU program templates are generated, we compile them using gcc for the CPU code and nvcc for the GPU code to produce the respective object files. 
+        The compiled programs are then executed using Python's subprocess command.
+
+      </p>
+
+      <p>
+        The process of GPU-NBDetect begins with <b>user-defined inputs</b>, which are typically provided by GPU programmers or users who rely on GPU applications. In our case, we refer to the <a href="https://docs.nvidia.com/cuda/cuda-math-api/index.html" style="text-decoration: underline;">NVIDIA Math Library to ensure the inputs are within the supported range and select appropriate values based on each mathematical operator.
+
+      </p>
+
+      <p>During our study, we observed that developers often test GPU programs with random inputs to identify bugs. 
+        For example, to detect rounding errors, GPU developers might experiment with values like 0.5, 0.499999, or 0.50000001. 
+        To automate this process and make it more efficient, we developed seven mutation strategies inspired by existing fuzzing techniques, offering a more systematic and affordable approach to generating test inputs. 
+        To minimize <b>false positives</b>, each input is subjected to two constraints: 1) verifying that the inputs fall within the supported range for floating-point numbers, and 2) ensuring that the inputs do not overlap with known bug-triggering inputs as identified in the NVIDIA Math Library documentation. 
+      </p>
+
+      <ul> 
+        <li> bitflip_s: Flips the sign component of a floating-point number with a 50% probability, switching between 0 and 1.</li>
+        <li>bitflip_e: Flips a single bit at a random position within the exponent</li>
+        <li>bitflip_m: Flips a single bit at a random position within the mantissa</li>
+        <li> add_e: Adds a randomly generated integer (between 1 and 32) to the exponent.</li>
+        <li>add_m: Adds an integer 2^p − 1 to the mantissa, where p is randomly generated between 1 and 33.</li>
+        <li> sub_e: Subtracts a randomly generated integer (between 1 and 32) from the exponent.</li>
+        <li> sub_m: Subtracts an integer 2^p−1 from the mantissa,, where p is randomly generated between 1 and 33.</li>
+        <li> random bit: Sets a randomly chosen bit in the exponent or mantissa to a random value</li>
+      </ul>
+
+      <
+
+
+
 
 
   </section>
