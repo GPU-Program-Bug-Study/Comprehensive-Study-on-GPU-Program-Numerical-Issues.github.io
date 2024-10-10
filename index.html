@@ -637,7 +637,7 @@ table, th, td {
       </p>
 
       <p>
-        The process of GPU-NBDetect begins with <b>user-defined inputs</b>, which are typically provided by GPU programmers or users who rely on GPU applications. In our case, we refer to the <a href="https://docs.nvidia.com/cuda/cuda-math-api/index.html" style="text-decoration: underline;">NVIDIA Math Library to ensure the inputs are within the supported range and select appropriate values based on each mathematical operator.
+        The process of GPU-NBDetect begins with <b>user-defined inputs</b>, which are typically provided by GPU programmers or users who rely on GPU applications. In our case, we refer to the <a href="https://docs.nvidia.com/cuda/cuda-math-api/index.html" style="text-decoration: underline;">NVIDIA Math Library </a> to ensure the inputs are within the supported range and select appropriate values based on each mathematical operator.
 
       </p>
 
@@ -658,7 +658,109 @@ table, th, td {
         <li> random bit: Sets a randomly chosen bit in the exponent or mantissa to a random value</li>
       </ul>
 
-      <
+      <p>
+        Next, we implemented the manifestation strategies outlined in Table IV, which were inspired by our findings from the study (Table 1 in our paper). 
+        To determine the appropriate thresholds for assertions in each manifestation strategy, we tested multiple error bounds to find the most effective range. 
+        Bug samples that could not be consistently detected within a specific error bound were excluded, which helped reduce false positives. The selected thresholds strike a balance between accurately detecting bugs and maintaining meaningful comparisons between expected and actual results.
+
+      </p>
+
+      <p>
+        From our findings, we observed that GPU programmers frequently compare the results of GPU programs with their CPU counterparts to confirm the presence of a bug. 
+        This observation led us to implement differential testing in GPU-NBDetect to initially verify whether GPU programs exhibit numerical errors. 
+        Once a bug is detected, we use assertions and manifestation strategies to further classify the type of bug involved.
+      </p>
+        
+        <p>
+          Currently, GPU-NBDetect is capable of detecting overflow, underflow, rounding, special value bugs, as well as casting and data type bugs. 
+          For each mathematical function, GPU-NBDetect generates 100 input samples to evaluate its effectiveness in identifying potential GPU numerical bugs. 
+          Given the inherent randomness of the mutation operators, we conducted three independent runs to ensure the accuracy and consistency of the results.
+
+      </p>
+
+      <h3>Eliminating False-positives: </h3>
+      <p>GPU-NBDetect identified 81 bugs, of which 57 were confirmed by developers. 
+        As detailed in Table IV, manifestation strategies one through six are designed to reliably detect numerical bugs. 
+        To further reduce false positives, we implemented specific constraints during the input generation process: 1) verifying that the inputs are within the supported range for floating-point numbers, and 2) ensuring that these inputs do not overlap with known bug-triggering inputs listed in the NVIDIA Math Library documentation.
+      </p>
+
+      <p>
+        However, for strategies seven through nine, false positives may still occur. 
+        This is due to the reliance on profiling mechanisms, which require both detailed profilers and a wide range of inputs to accurately determine the presence of a bug. 
+        Nonetheless, we have minimized the occurrence of false positives by carefully refining the input generation process and applying these constraints.
+      </p>
+
+      <h3>Confirmation with developers: </h3>
+      <p>
+      We reported the detected bugs on the NVIDIA developer forum, where NVIDIA developers could confirm or provide insights regarding the results. 
+      Our testing was conducted using the CUDA Math library. 
+      In some cases, the <a href="https://docs.nvidia.com/cuda/cuda-math-api/index.html" style="text-decoration: underline;">NVIDIA Math Library </a>  indicated that certain inputs might produce errors.
+      However, it was unclear whether these errors fell within the supported range of inputs. 
+      GPU-NBDetect successfully identified such numerical bugs, and we reported them to NVIDIA. 
+      In response, developers write unit tests to confirm the presence of these bugs. 
+      Additionally, developers acknowledged that GPUs lack a built-in mechanism to detect exceptions, and our tool identified exception-triggering inputs that were within the valid range of supported inputs.
+      </p>
+
+      <p>
+        <b>Fixing these identified numerical bugs</b> presents a challenge due to the nature of GPU architecture. 
+        Developers would need to implement floating-point exception flags, rounding registers, and conditional statements in the GPU code to address these issues. 
+        Although these measures can resolve numerical bugs, they may also introduce performance-related problems, as GPUs are optimized for parallel computations. 
+        For example, addressing overflow, underflow, and special value bugs requires developing exception-handling mechanisms, which can be computationally expensive and may negatively affect performance.
+      </p>
+        
+        <p>
+          Given the complexity and performance trade-offs, it is often more practical to rely on third-party tools to detect such bugs. 
+          Our tool, GPU-NBDetect, provides a valuable starting point for identifying and addressing these issues without compromising the efficiency of GPU computations.
+
+      </p>
+
+      <h3>
+        Comparison with other tools:
+
+      </h3>
+
+      <p>
+        While existing tools primarily focus on detecting overflow, underflow, and special value bugs, GPU-NBDetect is designed to detect a broader range of bug types. 
+        Furthermore, these tools typically rely on user-defined inputs and lack an automated test input generation strategy, which is a key feature of GPU-NBDetect. 
+        This limitation makes it more challenging to reliably identify bug-triggering inputs with those tools.
+
+      </p>
+
+      <p>
+        Additionally, a direct comparison between GPU-NBDetect and other tools may not be entirely fair, as GPU-NBDetect emphasizes both bug detection and input generation techniques. 
+        However, incorporating the input-generation capabilities of GPU-NBDetect into existing tools could greatly enhance their effectiveness, highlighting another significant contribution our tool offers to the community.
+      </p>
+
+      <h3>Examples: </h3> 
+
+      <p>Next, we will highlight some of the interesting examples observed by GPU-NBDetect.</p>
+
+      <ul>
+        <li>The cosh function computes calculates the hyperbolic cosine of the input 𝑥. This is an increasing function, which is expected to overflow as the input increases. However, <a href="https://docs.nvidia.com/cuda/cuda-math-api/index.html" style="text-decoration: underline;">CUDA Math Library </a> does not specify the range of input values that causes the results to be overflow. 
+            However, GPU-NBDetect finds that input value 3.6864e+4 as an input that causes an overflow error. This provides users with more information than the documentation regarding exception inducing inputs. 
+            The result is validated with the CPU version too. 
+        </li>
+        <li>
+          The erfc function computes the complementary error function of the input 𝑥. According to the <a href="https://docs.nvidia.com/cuda/cuda-math-api/index.html" style="text-decoration: underline;">CUDA Math Library </a>, the function should produce return 2 and +0 for inputs -INF and +INF respectively. 
+          However, GPU-NBDetect identifies an underflow error when the input is 6.7076092e+7. 
+          This is due to the input being too large, which causes the function to result in a value that is too close to zero that is too small to be represented as a floating point number. 
+          We verify the results with the CPU version. 
+          Therefore, GPU-NBDetect is capable of identifying such underflow bugs that can provide users with more information regarding the input values that should be used in the computations. 
+
+        </li>
+
+        <li>
+          The casting operator __float2int_rd converts a floating point number to an integer by rounding the value towards negative infinity according to the <a href="https://docs.nvidia.com/cuda/cuda-math-api/index.html" style="text-decoration: underline;">CUDA Math Library </a>. 
+          For example, the function outputs 24 if the input is 23.5. However, GPU-NBDetect identifies a casting error for an input 1.101256458240e+11 that produces 2.147483648e+9 as the output. 
+          The result is the maximum value representable by a 32-bit signed integer. This suggests that the __float2int_rd does not contain enough precision to obtain the result, thus producing the maximum possible value without invoking any exception. GPU-NBDetect has been successful in detecting such numerical bugs in GPU programs.
+
+        </li>
+
+      </ul>
+
+
+      
+
 
 
 
